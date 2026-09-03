@@ -1,0 +1,904 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   1. GLOBAL TYPOGRAPHY (The "Master" Rules)
+   ========================================= */
+
+body {
+    /* This sets the font for ALL text on the site */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    color: #444; /* A soft dark gray is easier to read than pure black */
+    line-height: 1.6; /* Makes text easier to read */
+}
+
+/* Headings: We use a Serif font here for that "Academic/Elegant" look */
+h1, h2, h3, h4 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #222;
+    margin-top: 0;
+}
+
+/* Specific sizes for consistency */
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs: Justified text */
+p {
+    text-align: justify; /* This aligns text to both left and right edges */
+    margin-bottom: 15px;
+}
+
+/* Lists: Keep them left-aligned so they don't look weird */
+ul, ol {
+    text-align: left; 
+    margin-bottom: 20px;
+}
+
+/* Links: Consistent color */
+/* Style for external links to make them stand out */
+.external-link {
+    color: #1f4e79; /* Your theme blue */
+    text-decoration: underline; /* Always underlined */
+    font-weight: bold; /* Bold text */
+}
+
+.external-link:hover {
+    color: #0d2b4a; /* Darker blue on hover */
+    background-color: #f0f4f8; /* Light blue background on hover */
+}
+
+
+
+/* --- HEADER STYLES --- */
+header {
+    /* 1. The Background Image */
+    /* Note: Since CSS is in the 'css' folder, we go up one level (..) to find images */
+    background-image: url('../images/header_bg_paraglide.JPG'); 
+    background-size: cover;       /* Makes image cover the whole area */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;
+    
+    /* 2. Layout (Flexbox) */
+    display: flex;
+    justify-content: space-between; /* Pushes Name to Left, Nav to Right */
+    align-items: flex-start;        /* This moves everything to the top */
+    
+    /* 3. Sizing */
+    height: 350px; /* Adjust this height to fit your image */
+    padding-top: 30px; 
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/* The Name (Left Side) */
+header h1 {
+    color: #333; /* Dark text as seen in your screenshot */
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Optional: Add a white text shadow if the background is too dark behind the name */
+    /* text-shadow: 1px 1px 2px white; */ 
+}
+
+header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* The Navigation (Right Side) */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 10px 20px; /* Padding inside the button */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+}
+
+/* THE RECTANGLE (Active State) */
+/* This class creates the white box around the current page */
+nav a.active {
+    border: 2px solid white;
+}
+
+
+
+
+/* --- MAIN CONTENT --- */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.biography {
+    text-align: center;
+}
+
+.biography h2 {
+    color: #1f4e79;
+    margin-bottom: 20px;
+}
+
+.biography p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.profile-photo img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+/* --- ABOUT ME CONTAINER --- */
+.about-container {
+    display: flex; /* This makes the children sit side-by-side */
+    max-width: 1000px; /* Keeps the content from getting too wide */
+    margin: 50px auto; /* Centers the container on the page */
+    padding: 0 20px;
+    gap: 60px; /* Space between the image and the text */
+    align-items: flex-start; /* Aligns items to the top */
+}
+
+/* Left Side: Image */
+.about-image {
+    flex: 1; /* Takes up 1 part of the space */
+    max-width: 40%; /* Limits image size */
+}
+
+.about-image img {
+    width: 100%; /* Makes image fill its container */
+    height: auto;
+    display: block;
+}
+
+/* Right Side: Content */
+.about-content {
+    flex: 1.5; /* Takes up slightly more space than the image */
+    text-align: left;
+}
+
+/* Styling the Headings (Work Experience, etc.) */
+.about-content h3 {
+    text-decoration: underline; /* Adds the underline seen in screenshot */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Styling Lists with Bullets */
+.about-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.about-content li {
+    margin-bottom: 5px;
+}
+
+/* Styling Text Paragraphs (Languages/Softwares) */
+.about-content p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* --- BUTTON STYLES --- */
+/* Button Container Alignment (Keep this one to align right) */
+.button-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Pushes buttons to the RIGHT side */
+    margin-top: 40px;
+    gap: 20px; 
+}
+
+/* The Button Style */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    text-decoration: none; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: all 0.3s ease; 
+}
+
+/* Hover effect (turns black when you mouse over) */
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Responsive: Stack them on mobile phones */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; 
+    }
+    .about-image {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .button-container {
+        align-items: center; /* Center buttons on mobile */
+    }
+}
+
+
+/* --- PROJECTS CONTAINER --- */
+
+.projects-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Layout for Intro Text and Side Buttons */
+.intro-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.intro-text {
+    flex: 2; /* Takes up more space */
+    color: #555;
+    line-height: 1.6;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+}
+
+/* Side Buttons (Research / Contact) */
+.side-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers buttons vertically */
+    align-items: flex-end; /* Aligns buttons to the right */
+    gap: 15px;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    width: 120px; /* Fixed width for uniformity */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Quick Navigation Links */
+.quick-nav {
+    /* This is the magic that makes it stick! */
+    position: sticky;
+    top: 0; /* Sticks to the very top of the screen when scrolled to */
+    
+    /* Styling to make it look like a floating bar */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    backdrop-filter: blur(5px); /* Modern "frosted glass" effect */
+    z-index: 1000; /* Ensures it stays on top of all other content */
+    
+    padding: 15px 20px;
+    margin: 40px 0 30px 0;
+    border-bottom: 2px solid #1f4e79; /* Blue line to separate it from content */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow when it floats */
+    text-align: center;
+}
+
+.quick-nav h3 {
+    margin: 0 0 10px 0;
+    font-size: 0.85em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.quick-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.quick-nav a {
+    color: #1f4e79;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 8px 16px;
+    border-radius: 20px; /* Makes them look like pill-shaped buttons */
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.quick-nav a:hover {
+    background-color: #1f4e79;
+    color: white;
+    border-color: #1f4e79;
+}
+
+/* Dividers */
+.divider {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.sub-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0 40px 0;
+}
+
+/* Section Titles (e.g., Architectural Design) */
+.section-title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Project Items */
+.project-item p, .project-item li {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   BOTTOM PAGE BUTTONS (Equal Length)
+   ========================================= */
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stacks them vertically */
+    align-items: center;    /* Centers them horizontally on the page */
+    margin-top: 60px;
+    margin-bottom: 40px;
+    gap: 20px;              /* Space between the two buttons */
+}
+
+/* Force the .btn class to have a fixed width when inside .button-container */
+.button-container .btn {
+    width: 150px;           /* Sets a fixed width so they are exactly the same length */
+    text-align: center;     /* Ensures the text is centered inside the button */
+    display: block;         /* Makes the width property work correctly */
+    
+    /* Optional: If you want them to look EXACTLY like the top buttons, 
+       you can change "btn" to "btn-small" in the HTML above, 
+       or uncomment the lines below to match the top style: */
+    /* padding: 10px 20px; */
+    /* font-size: 0.8em; */
+    /* border: 1px solid black; */
+}
+
+
+
+/* --- IMAGE GALLERY STYLES --- */
+
+.gallery-container {
+    margin: 40px 0;
+}
+
+.main-image {
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #f5f5f5; /* Light gray background while loading */
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Allows horizontal scrolling if many thumbnails */
+    padding-bottom: 10px;
+}
+
+.thumb {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Prevents thumbnails from shrinking */
+    opacity: 0.5; /* Dims inactive thumbnails */
+}
+
+.thumb:hover {
+    border-color: #1f4e79; /* Blue border on hover */
+    opacity: 0.8;
+}
+
+.thumb.active {
+    border-color: #1f4e79; /* Blue border for selected thumbnail */
+    opacity: 1;
+}
+
+
+/* =========================================
+   RESEARCH PAGE STYLES
+   ========================================= */
+.project-title {
+    font-size: 1.3em;
+    color: #1f4e79; /* Your theme blue */
+    margin-bottom: 5px;
+    /* Optional: subtle underline like original */
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.project-item h3 strong {
+    font-size: 1.1em;
+    color: #222;
+    font-weight: 600;
+}
+
+.project-item p {
+    color: #555;
+    line-height: 1.7; /* Slightly more readable for long abstracts */
+}
+
+/* Add a subtle visual separator between research categories */
+.project-item {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+.contact-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.contact-layout {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-info .external-link {
+    color: #1f4e79;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contact-form {
+    flex: 1.5;
+}
+
+.required-note {
+    font-size: 0.85em;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1f4e79;
+    box-shadow: 0 0 0 2px rgba(31, 78, 121, 0.1);
+}
+
+.name-fields {
+    display: flex;
+    gap: 15px;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.btn-submit:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .contact-info {
+        padding-right: 0;
+    }
+    
+    .name-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+/* =========================================
+   HOME PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* Remove default browser spacing */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Header - COMPLETELY override the general header rule */
+body.home-page header {
+    background: white !important; /* Override the paragliding image */
+    background-image: none !important; /* Remove the image */
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    height: auto !important; /* Override the 350px height */
+    min-height: 60px;
+}
+
+body.home-page header h1 {
+    color: #333;
+    background: transparent;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+body.home-page nav {
+    margin: 0;
+}
+
+body.home-page nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+body.home-page nav a {
+    color: #333;
+    background: transparent;
+    padding: 8px 15px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+body.home-page nav a:hover {
+    color: #66b296;
+}
+
+body.home-page nav a.active {
+    border: 1px solid #333;
+    background: transparent;
+    color: #333;
+}
+
+/* 2. Main Container - Override the 800px limit */
+body.home-page main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. Hero Section */
+.hero-section {
+    background-image: url('../images/Home_climbing.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Text Positioning */
+.hero-content {
+    text-align: right;
+    padding-right: 3%;
+    width: 20%;
+}
+
+.hero-name {
+    font-family: 'Georgia', serif;
+    font-size: 4em;
+    margin: 0;
+    font-style: italic;
+    color: #66b296;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    margin-top: 15px;
+    color: #66b296;
+}
+
+/* 5. About Section */
+.home-about-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.home-about-section .about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.home-about-section .about-image {
+    flex: 1;
+}
+
+.home-about-section .about-image img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.home-about-section .about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.home-about-section .about-text h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-about-section .about-text p {
+    text-align: justify;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 6. Black Buttons */
+.btn-black {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+}
+
+.btn-black:hover {
+    opacity: 0.8;
+}
+
+/* =========================================
+   NEW COLLAGE GRID STYLES
+   ========================================= */
+
+.home-projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.section-heading {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.collage-container {
+    position: relative;
+    max-width: 1200px; /* Keeps it from getting too wide on huge screens */
+    margin: 0 auto;
+}
+
+/* The Grid Layout */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns allows for 3, 4, and 2 splits */
+    grid-auto-rows: 250px; /* Height of each row */
+    gap: 15px; /* White space between images */
+}
+
+.grid-item {
+    overflow: hidden;
+    background-color: #eee; /* Placeholder color while loading */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the box without stretching */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover effect for individual images */
+.grid-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* --- LAYOUT ASSIGNMENTS --- */
+
+/* Row 1: 3 Images (12 / 3 = 4 columns each) */
+.grid-item:nth-child(1) { grid-column: span 4; }
+.grid-item:nth-child(2) { grid-column: span 4; }
+.grid-item:nth-child(3) { grid-column: span 4; }
+
+/* Row 2: 4 Images (12 / 4 = 3 columns each) */
+.grid-item:nth-child(4) { grid-column: span 3; }
+.grid-item:nth-child(5) { grid-column: span 3; }
+.grid-item:nth-child(6) { grid-column: span 3; }
+.grid-item:nth-child(7) { grid-column: span 3; }
+
+/* Row 3: 2 Images (12 / 2 = 6 columns each) */
+.grid-item:nth-child(8) { grid-column: span 6; }
+.grid-item:nth-child(9) { grid-column: span 6; }
+
+/* The Button Overlay */
+.collage-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Responsive: Stack them on mobile */
+@media (max-width: 768px) {
+    .collage-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        grid-auto-rows: 200px;
+    }
+    .grid-item:nth-child(n) {
+        grid-column: span 1 !important; /* Reset all spans */
+    }
+}
+
+
+/* 8. Contact Section */
+.home-contact-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-about-section .about-container {
+        flex-direction: column;
+    }
+    .hero-name {
+        font-size: 2.5em;
+    }
+    .collage-track img {
+        height: 200px;
+    }
+}

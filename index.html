@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier Arevalo - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page"> <!-- Added class to style header differently -->
+
+    <!-- Header (Styled specifically for Home Page to be transparent/white) -->
+    <header class="home-header">
+        <h1>JAVIER ARÉVALO / 何育杰</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about_me.html">About Me</a></li>
+                <li><a href="projects.html">My Work</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION (The big picture with name) -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-name">Javier Arévalo / 何育杰</h1>
+                <p class="hero-subtitle">A tenacious adventurer</p>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION (Photo left, Text right) -->
+        <section class="home-about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Replace with your actual photo filename -->
+                    <img src="images/MyPic.jpeg" alt="Photo of Javier Arevalo">
+                </div>
+                <div class="about-text">
+                    <h2>A Little About Myself</h2>
+                    <p>As a civil engineering student, I'm passionate about sustainability and architecture, with a current research focus on urban microclimates and strategies to mitigate the UHI effect.</p>
+                    <p>I am a multifaceted individual guided by strong morals, embracing guidance and feedback to learn and grow.</p>
+                    <p>My service aims to benefit others and myself. As a proactive and versatile problem-solver, I strive to deliver my best, undaunted by unfamiliar challenges, driven by a thirst for knowledge and self-improvement.</p>
+                    <a href="about_me.html" class="btn-black">LEARN MORE</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROJECTS COLLAGE (Grid Layout with Swapping) -->
+        <section class="home-projects-section">
+            <h2 class="section-heading">Projects</h2>
+            
+            <div class="collage-container">
+                <div class="collage-grid">
+                    <!-- Row 1 (3 images) -->
+                    <div class="grid-item"><img src="images/Pr_Arch_NZB_2.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Arch_NZB_10.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Arch_NZB_15.png" class="collage-img" alt="Project"></div>
+                    
+                    <!-- Row 2 (4 images) -->
+                    <div class="grid-item"><img src="images/Pr_Arch_NZB_16.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Arch_OP_3.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Wood_WB_2.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Wood_WB_3.png" class="collage-img" alt="Project"></div>
+                    
+                    <!-- Row 3 (2 images) -->
+                    <div class="grid-item"><img src="images/Pr_Wood_WB_7.png" class="collage-img" alt="Project"></div>
+                    <div class="grid-item"><img src="images/Pr_Wood_WB_9.png" class="collage-img" alt="Project"></div>
+                </div>
+                
+                <!-- The Button in the middle -->
+                <div class="collage-overlay">
+                    <a href="projects.html" class="btn-black">VIEW MORE</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. CONTACT SECTION -->
+        <section class="home-contact-section">
+            <h2 class="section-heading">Get In Touch</h2>
+            <a href="contact.html" class="btn-black">CONTACT ME</a>
+        </section>
+
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

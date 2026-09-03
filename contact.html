@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Javier Arevalo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+    <h1>JAVIER ARÉVALO / 何育杰</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_me.html">About me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="projects-wrapper">
+            
+            <!-- 1. Main Title -->
+            <h1 class="main-title">Contact Me</h1>
+
+            <div class="contact-layout">
+                
+                <!-- Left Side: Info -->
+                <div class="contact-info">
+                    <p>Feel free to contact me for further details on any project or research!</p>
+                    
+                    <p>Check out my <a href="https://www.linkedin.com/in/javier-arevalo-12heyujie" target="_blank" rel="noopener noreferrer" class="external-link"><strong>LinkedIn</strong></a> profile as well!</p>
+                </div>
+
+                <!-- Right Side: Contact Form -->
+                <div class="contact-form">
+                    <p class="required-note">* INDICATES REQUIRED FIELD</p>
+                    
+                    <!-- Replace the action URL with your Formspree endpoint -->
+                    <form action="https://formspree.io/f/xjyvwoaq" method="POST">
+                        
+                        <label for="fname">NAME *</label>
+                        <div class="name-fields">
+                            <input type="text" id="fname" name="first-name" placeholder="First" required>
+                            <input type="text" id="lname" name="last-name" placeholder="Last">
+                        </div>
+
+                        <label for="email">EMAIL *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+
+                        <label for="message">COMMENT *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+
+                        <button type="submit" class="btn-submit">SUBMIT</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

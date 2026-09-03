@@ -1,2 +1,2 @@
-# Javier Arevalo's Portfolio
+# Portfolio
 Personal portfolio / website
