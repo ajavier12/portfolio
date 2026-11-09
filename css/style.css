@@ -902,3 +902,110 @@ body.home-page main {
         height: 200px;
     }
 }
+
+
+/* =========================================
+   RESPONSIVE DESIGN — ONE SITE, ALL SCREENS
+   ========================================= */
+
+/* ---------- TABLETS (iPad) ---------- */
+@media (max-width: 1024px) {
+    header,
+    body.home-page header {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .hero-content { width: 45%; }
+    .hero-name    { font-size: 3em; }
+}
+
+/* ---------- PHONES (iPhone) ---------- */
+@media (max-width: 768px) {
+
+    /* 1. HEADER: stack the name above the menu, centered */
+    header,
+    body.home-page header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 15px;
+        height: auto;        /* removes the fixed 350px height */
+    }
+
+    nav ul,
+    body.home-page nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    nav a,
+    body.home-page nav a {
+        padding: 6px 10px;
+        font-size: 0.7em;
+    }
+
+    /* 2. HERO: center the text so nothing gets cut off */
+    .hero-section {
+        height: 75vh;
+        justify-content: center;   /* was: flex-end (pushed right) */
+    }
+
+    .hero-content {
+        width: 92%;                /* was: 20% — this caused the cut text */
+        padding-right: 0;
+        text-align: center;        /* was: right */
+    }
+
+    .hero-name     { font-size: 2.4em; }
+    .hero-subtitle { font-size: 1.1em; }
+
+    /* 3. STACK ALL SIDE-BY-SIDE LAYOUTS VERTICALLY */
+    .intro-layout,
+    .contact-layout,
+    .about-container,
+    .home-about-section .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .side-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-image { max-width: 100%; }
+
+    /* 4. SMALLER TEXT & BUTTONS FOR SMALL SCREENS */
+    .projects-wrapper,
+    .contact-wrapper { padding: 30px 15px; }
+
+    .main-title,
+    .section-heading { font-size: 2em; }
+
+    .section-title { font-size: 1.6em; }
+
+    .quick-nav a { font-size: 0.85em; padding: 6px 10px; }
+
+    .btn, .btn-small, .btn-black, .btn-submit {
+        font-size: 0.85em;
+        padding: 12px 20px;
+    }
+
+    /* 5. COLLAGE: one column on phones */
+    .collage-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+    .grid-item:nth-child(n) { grid-column: span 1 !important; }
+
+    /* Justified text looks bad on narrow screens (big word gaps) */
+    p { text-align: left; }
+}
+
+/* ---------- VERY SMALL PHONES ---------- */
+@media (max-width: 400px) {
+    .hero-name { font-size: 1.9em; }
+    nav a { font-size: 0.65em; padding: 5px 8px; }
+}
